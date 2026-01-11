@@ -1,0 +1,20 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".devcontainer": true,
+        ".tmp": true,
+        "build": false
+    },
+    "C_Cpp.default.includePath": [
+        "/opt/z88dk/include"
+    ],
+    "files.associations": {
+        "spectrum.h": "c"
+    },
+    "zxide.z88dk.useAsmDebug": false
+}

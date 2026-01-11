@@ -1,0 +1,98 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build sdcc-classic-lib",
+            "type": "shell",
+            "command": "make",
+            "detail": "Build project",
+            "group": {
+                "kind": "build",
+            },
+            "args": [
+                "COMPILER=-compiler=sdcc",
+                "C_OPT_FLAGS=-SO3 --opt-code-size",
+                "CREATE_SNA=-Cz\"--sna\""
+            ],
+            "problemMatcher": [
+                {
+                    "owner": "zcc",
+                    "pattern": [
+                        {
+                            "regexp": "^(.*?):(\\d+):.*(warning|error).*:\\s+(.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "severity": 3,
+                            "message": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Build sdcc-new-lib",
+            "type": "shell",
+            "command": "make",
+            "detail": "Build project",
+            "group": {
+                "kind": "build",
+            },
+            "args": [
+                "COMPILER=-compiler=sdcc",
+                "CLIB=-clib=sdcc_iy",
+                "CRT=-startup=31",
+                "C_OPT_FLAGS=-SO3 --opt-code-size",
+                "CREATE_SNA=-Cz\"--sna\""
+            ],
+            "problemMatcher": [
+                {
+                    "owner": "zcc",
+                    "pattern": [
+                        {
+                            "regexp": "^(.*?):(\\d+):.*(warning|error).*:\\s+(.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "severity": 3,
+                            "message": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Build sccz80",
+            "type": "shell",
+            "command": "make",
+            "detail": "Build project",
+            "group": {
+                "kind": "build",
+            },
+            "args": [
+                "COMPILER=-compiler=sccz80",
+                "C_OPT_FLAGS=-O3",
+                "CREATE_SNA=-Cz\"--sna\""
+            ],
+            "problemMatcher": [
+                {
+                    "owner": "zcc",
+                    "pattern": [
+                        {
+                            "regexp": "^(.*?):(\\d+):.*(warning|error).*:\\s+(.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "severity": 3,
+                            "message": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "make clean",
+            "problemMatcher": [],
+            "detail": "Clean project files"
+        }
+    ]
+}
