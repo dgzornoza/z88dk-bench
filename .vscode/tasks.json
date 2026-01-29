@@ -10,9 +10,10 @@
                 "kind": "build",
             },
             "args": [
-                "COMPILER=-compiler=sdcc",
+                "COMPILER=sdcc",
                 "C_OPT_FLAGS=-SO3 --opt-code-size",
-                "CREATE_SNA=-Cz\"--sna\""
+                "CREATE_SNA=true",
+                "CREATE_TAP=true"
             ],
             "problemMatcher": [
                 {
@@ -38,11 +39,12 @@
                 "kind": "build",
             },
             "args": [
-                "COMPILER=-compiler=sdcc",
-                "CLIB=-clib=sdcc_iy",
-                "CRT=-startup=31",
+                "COMPILER=sdcc",
+                "CLIB=sdcc_iy",
+                "CRT=31",
                 "C_OPT_FLAGS=-SO3 --opt-code-size",
-                "CREATE_SNA=-Cz\"--sna\""
+                "CREATE_SNA=true",
+                "CREATE_TAP=true"
             ],
             "problemMatcher": [
                 {
@@ -60,7 +62,7 @@
             ]
         },
         {
-            "label": "Build sccz80",
+            "label": "Build sccz80-classic-lib",
             "type": "shell",
             "command": "make",
             "detail": "Build project",
@@ -68,9 +70,10 @@
                 "kind": "build",
             },
             "args": [
-                "COMPILER=-compiler=sccz80",
+                "COMPILER=sccz80",
                 "C_OPT_FLAGS=-O3",
-                "CREATE_SNA=-Cz\"--sna\""
+                "CREATE_SNA=true",
+                "CREATE_TAP=true"
             ],
             "problemMatcher": [
                 {
@@ -88,11 +91,42 @@
             ]
         },
         {
-            "label": "Clean",
+            "label": "Build sccz80-new-lib",
             "type": "shell",
-            "command": "make clean",
+            "command": "make",
+            "detail": "Build project",
+            "group": {
+                "kind": "build",
+            },
+            "args": [
+                "COMPILER=sccz80",
+                "CLIB=new",
+                "CRT=31",
+                "C_OPT_FLAGS=-O3",
+                "CREATE_SNA=true",
+                "CREATE_TAP=true"
+            ],
+            "problemMatcher": [
+                {
+                    "owner": "zcc",
+                    "pattern": [
+                        {
+                            "regexp": "^(.*?):(\\d+):.*(warning|error).*:\\s+(.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "severity": 3,
+                            "message": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Clean All",
+            "type": "shell",
+            "command": "make clean_all",
             "problemMatcher": [],
-            "detail": "Clean project files"
+            "detail": "Clean all build and object files"
         }
     ]
 }
