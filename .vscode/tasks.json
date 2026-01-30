@@ -12,6 +12,7 @@
             "args": [
                 "COMPILER=sdcc",
                 "C_OPT_FLAGS=-SO3 --opt-code-size",
+                "LINKER_FLAGS=-lmath48",
                 "CREATE_SNA=true",
                 "CREATE_TAP=true"
             ],
@@ -43,6 +44,7 @@
                 "CLIB=sdcc_iy",
                 "CRT=31",
                 "C_OPT_FLAGS=-SO3 --opt-code-size",
+                "LINKER_FLAGS=-lm",
                 "CREATE_SNA=true",
                 "CREATE_TAP=true"
             ],
@@ -72,6 +74,7 @@
             "args": [
                 "COMPILER=sccz80",
                 "C_OPT_FLAGS=-O3",
+                "LINKER_FLAGS=-lmath48",
                 "CREATE_SNA=true",
                 "CREATE_TAP=true"
             ],
@@ -103,6 +106,7 @@
                 "CLIB=new",
                 "CRT=31",
                 "C_OPT_FLAGS=-O3",
+                "LINKER_FLAGS=-lm",
                 "CREATE_SNA=true",
                 "CREATE_TAP=true"
             ],
