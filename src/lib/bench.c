@@ -4,9 +4,9 @@ static unsigned long bench_start_tick = 0;
 
 void bench_start(const char *name)
 {
-    print_string(FONT_CONTROL_CRLF "Start ");
+    print_string(FONT_CONTROL_CRLF "bench-");
     print_string((char *)name);
-    print_string(" ..." FONT_CONTROL_CRLF);
+    print_string(": ");
 
     bench_start_tick = zx_clock();
 }
@@ -17,12 +17,10 @@ unsigned long bench_end(void)
     unsigned long end_tick = zx_clock();
     unsigned long elapsed_ms = (end_tick - bench_start_tick) * 20UL; // 1 tick = 20ms (50Hz)
 
-    print_string("Tiempo transcurrido:");
-
     char buf[32];
     ultoa(elapsed_ms, buf, 10);
     print_string(buf);
-    print_string(" ms" FONT_CONTROL_CRLF);
+    print_string(" ms");
 
     return elapsed_ms;
 }
