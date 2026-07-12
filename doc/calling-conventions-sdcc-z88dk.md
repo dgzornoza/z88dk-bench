@@ -17,7 +17,7 @@
 
 ---
 
-### 🧩 Descripción
+## 🧩 Descripción
 
 - **__sdcccall(0)** → Convención antigua (por defecto hasta SDCC 4.1.11).  
 - **__sdcccall(1)** → Convención nueva (por defecto desde SDCC 4.1.12).  
@@ -25,7 +25,7 @@
 
 ---
 
-### 📘 Explicación adicional
+## 📘 Explicación adicional
 
 La nueva convención de llamada maneja más casos que **__z88dk_fastcall**, y también funciona cuando hay más parámetros en la función.  
 En esos casos, los parámetros no manejados por los registros se pasan a través del **stack**.
