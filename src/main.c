@@ -28,32 +28,32 @@ int main(void)
     enable_ei();
 
     // standard benchmarks
-    bench_start("bench_coremark");
+    bench_start("coremark");
     bench_coremark(BENCH_COREMARK_ITERATIONS);
     bench_end();
 
-    bench_start("bench_fpmark");
+    bench_start("fpmark");
     bench_fpmark(BENCH_FPMARK_ITERATIONS);
     bench_end();
 
     // custom benchmarks
-    bench_start("bench_add");
+    bench_start("add");
     bench_add(BENCH_ARITHMETIC_ITERATIONS);
     bench_end();
 
-    bench_start("bench_call");
+    bench_start("call");
     bench_call(BENCH_CALL_ITERATIONS);
     bench_end();
 
-    bench_start("bench_memcpy");
+    bench_start("memcpy");
     bench_memcpy(BENCH_MEM_ITERATIONS);
     bench_end();
 
-    bench_start("bench_memset");
+    bench_start("memset");
     bench_memset(BENCH_MEM_ITERATIONS);
     bench_end();
 
-    bench_start("bench_malloc");
+    bench_start("malloc");
     bench_malloc(BENCH_MALLOC_ITERATIONS);
     bench_end();
 
