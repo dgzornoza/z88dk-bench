@@ -47,7 +47,7 @@ PRAGMA_FILE=zpragma.inc
 
 # Flags
 CFLAGS=$(TARGET) $(VERBOSITY) -c $(C_OPT_FLAGS) $(COMPILER_FLAG) $(CLIB_FLAG) --list --c-code-in-asm -pragma-include:$(PRAGMA_FILE)
-LDFLAGS=$(TARGET) $(VERBOSITY) $(CLIB_FLAG) -pragma-include:$(PRAGMA_FILE)
+LDFLAGS=$(TARGET) $(VERBOSITY) $(LINKER_FLAGS) $(CLIB_FLAG) -pragma-include:$(PRAGMA_FILE)
 ASFLAGS=$(TARGET) $(VERBOSITY) -c --list
 
 EXEC=$(OUT_DIR)/$(EXEC_OUTPUT)

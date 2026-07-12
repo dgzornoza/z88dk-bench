@@ -2,3 +2,4 @@
 // add pragma directives ...
 
 #pragma output CRT_ORG_CODE           = 24500      // org of compile, this should be higher if you want to allocate graphics and allow compatibility 16Kb
+#pragma define CRT_HEAP_AMALLOC=1
