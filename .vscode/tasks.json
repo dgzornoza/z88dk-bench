@@ -12,7 +12,6 @@
             "args": [
                 "COMPILER=sdcc",
                 "C_OPT_FLAGS=-SO3 --opt-code-size",
-                "LINKER_FLAGS=-lmath48",
                 "CREATE_SNA=true",
                 "CREATE_TAP=true"
             ],
