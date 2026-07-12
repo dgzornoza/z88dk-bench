@@ -1,0 +1,21 @@
+# Override examples
+#
+# Canonical build configurations live in `.vscode/tasks.json`.
+# Prefer running the matching VSCode task. Use these `make` commands only when
+# running headless or from a sub-agent, and copy the args verbatim from the task
+# definition you want to replicate.
+
+# Clean:
+make clean_all
+
+# sdcc + classic clib (mirror `Build sdcc-classic-lib`):
+make COMPILER=sdcc C_OPT_FLAGS="-SO3 --opt-code-size" LINKER_FLAGS="-lmath32" CREATE_SNA=true CREATE_TAP=true all
+
+# sdcc + new clib (`sdcc_iy`), CRT 31 (mirror `Build sdcc-new-lib`):
+make COMPILER=sdcc CLIB=sdcc_iy CRT=31 C_OPT_FLAGS="-SO3 --opt-code-size" LINKER_FLAGS="-lmath32" CREATE_SNA=true CREATE_TAP=true all
+
+# sccz80 + classic clib (mirror `Build sccz80-classic-lib`):
+make COMPILER=sccz80 C_OPT_FLAGS="-O3" LINKER_FLAGS="-lm" CREATE_SNA=true CREATE_TAP=true all
+
+# sccz80 + new clib (`new`), CRT 31 (mirror `Build sccz80-new-lib`):
+make COMPILER=sccz80 CLIB=new CRT=31 C_OPT_FLAGS="-O3" LINKER_FLAGS="-lm" CREATE_SNA=true CREATE_TAP=true all

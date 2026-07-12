@@ -1,0 +1,10 @@
+# zpragma.inc — shared Z88DK pragmas injected via -pragma-include
+# Reference: https://github.com/z88dk/z88dk/blob/master/doc/ZXSpectrumZSDCCnewlib_06_SomeDetails.md
+
+# Load address of compiled code. Raise if you allocate graphics or want 16K compatibility.
+#pragma output CRT_ORG_CODE = 24500
+
+# Use the alternative heap allocator: amalloc() / afree(). Plain malloc()/free() may not work.
+#pragma define CRT_HEAP_AMALLOC = 1
+
+# --- Add new shared pragmas below this line ---
