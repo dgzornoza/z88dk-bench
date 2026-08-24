@@ -3,3 +3,5 @@ build/
 src/*.c.lis
 *.lis
 obj/
+
+.atl/

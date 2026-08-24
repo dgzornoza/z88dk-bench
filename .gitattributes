@@ -1,0 +1,9 @@
+# Line ending policy: normalize to LF on commit; let Git decide per-file on checkout.
+# Avoids CRLF churn on Windows and keeps the repo consistent across OSes.
+* text=auto eol=lf
+
+# Explicit binary markers so Git never attempts line-ending conversion.
+*.xlsx binary
+*.bin binary
+*.tap binary
+*.sna binary

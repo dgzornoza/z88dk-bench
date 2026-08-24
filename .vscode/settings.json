@@ -4,11 +4,13 @@
         "**/.svn": true,
         "**/.hg": true,
         "**/CVS": true,
-        "**/.DS_Store": true,
+        "**/.ai": true,
+        "**/.atl": true,
         "**/Thumbs.db": true,
         ".devcontainer": true,
         ".tmp": true,
         "build": false,
+        "obj": true,
         "src/**/*.lis": true
     },
     "C_Cpp.default.includePath": [
